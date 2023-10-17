@@ -1,0 +1,29 @@
+name: Code Linting
+
+on:
+  pull_request:
+    paths:
+      - '**/*.js' # Spécifiez les chemins des fichiers que vous souhaitez linter
+      - '**/*.ts' # Pour TypeScript, sinon ajustez en fonction de votre langage
+      # Ajoutez d'autres extensions de fichiers si nécessaire
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository 🛎️
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18' # Utilisez la version de Node.js que votre projet requiert
+
+      - name: Install Dependencies
+        run: npm install # Utilisez yarn si vous préférez
+
+      - name: Lint Code
+        run: npm run lint # Remplacez cette commande par celle nécessaire pour lancer votre linter (par exemple, eslint)
+
+      # Vous pouvez ajouter d'autres étapes ici, comme des tests ou des rapports de couverture
