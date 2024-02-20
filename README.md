@@ -1,27 +1,30 @@
-# TPPipeline
+# TP Pipelines
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+## Description:
+This repository serves as a demonstration of linting capabilities on GitHub using a Build and Deploy workflow. The repository contains two main workflows: "Build and Deploy" and "Code Linting".
 
-## Development server
+## Build and Deploy Workflow:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    Name: Build and Deploy
+    Triggers: Triggered on push to the master branch and pull requests to the master branch.
+    Permissions: Write access to repository contents.
+    Steps:
+        Checkout Repository.
+        Set up Node.js.
+        Install Dependencies.
+        Build Angular App.
+        Deploy to GitHub Pages.
 
-## Code scaffolding
+## Code Linting Workflow:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Name: Code Linting
+    Triggers: Triggered on pull requests affecting JavaScript or TypeScript files.
+    Steps:
+        Checkout Repository.
+        Set up Node.js.
+        Install Dependencies.
+        Lint Code.
 
-## Build
+Both workflows utilize GitHub Actions for automation, ensuring consistent code quality and deployment processes. The "Build and Deploy" workflow focuses on deploying the application, while the "Code Linting" workflow ensures code quality by running a linting process on pull requests.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This repository demonstrates the integration of linting processes into GitHub workflows, aiding in maintaining code quality and consistency within projects.
